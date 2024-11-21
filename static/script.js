@@ -573,7 +573,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
         data[key] = value;
     });
 
-    fetch('http://192.168.1.193:5000/save', {
+    fetch('https://zzz-tournament.onrender.com/save', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -582,5 +582,8 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     })
     .then(response => response.json())
     .then(result => alert(result.message))
-    .catch(error => console.error('Ошибка:', error));
+    .catch(error => {
+        console.error('Ошибка:', error);
+        alert('Произошла ошибка при отправке данных!');
+    });
 });
