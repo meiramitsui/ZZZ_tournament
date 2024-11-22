@@ -21,7 +21,7 @@ const characters = [{
     limited: false,
     atribute: 'Физический',
     specialty: 'Нападение',
-    faction: 'Хитрые Зайцы'
+    faction: 'Хитрые зайцы'
 }, {
     i: 3,
     name: 'Бёрнис Уайт',
@@ -285,7 +285,7 @@ const wEngines = [{
     isSignA: true
 }, {
     i: 14,
-    name: 'Артиллерийский Ротор',
+    name: 'Артиллерийский ротор',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
