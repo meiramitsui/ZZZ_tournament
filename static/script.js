@@ -545,20 +545,43 @@ const wEngines = [{
 }
 ];
 
+function createCharacterOption(character) {
+    const option = document.createElement('option');
+    option.value = character.name;
+    option.innerHTML = `
+    <div style="display: flex; align-items: center;">
+            <img src="/static/icons/characters/${character.name}.webp" alt="${character.name}" width="50" height="50" style="margin-right: 10px;">
+            <span>${character.name} — ${character.rank}, ${character.atribute}, ${character.specialty}, ${character.faction}</span>
+        </div>
+    `;
+    return option;
+}
+
+function createwEngineOption(wEngine) {
+    const option = document.createElement('option');
+    option.value = wEngine.name;
+    option.innerHTML = `
+        <div style="display: flex; align-items: center;">
+            <img src="/static/icons/wEngines/${wEngine.name}.webp" alt="${wEngine.name}" width="50" height="50" style="margin-right: 10px;">
+            <span>${wEngine.name} — ${wEngine.rank}, ${wEngine.specialty}</span>
+        </div>
+    `;
+    return option;
+}
+
+const sortedCharacters = characters.sort((a, b) => a.name.localeCompare(b.name));
+const sortedWEngines = wEngines.sort((a, b) => a.name.localeCompare(b.name));
+
 document.querySelectorAll('select[name^="c"]').forEach(select => {
-    characters.forEach(character => {
-        const option = document.createElement('option');
-        option.value = character.name;
-        option.textContent = character.name;
+    sortedCharacters.forEach(character => {
+        const option = createCharacterOption(character);
         select.appendChild(option);
     });
 });
 
 document.querySelectorAll('select[name^="a"]').forEach(select => {
-    wEngines.forEach(wEngine => {
-        const option = document.createElement('option');
-        option.value = wEngine.name;
-        option.textContent = wEngine.name;
+    sortedWEngines.forEach(wEngine => {
+        const option = createwEngineOption(wEngine);
         select.appendChild(option);
     });
 });
