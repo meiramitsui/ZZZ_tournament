@@ -1,5 +1,5 @@
 const characters = [{
-    i: 0,
+    i: 1,
     name: 'Антон Иванов',
     rank: 'A-ранг',
     limited: false,
@@ -7,7 +7,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Комбинат Белобог'
 }, {
-    i: 1,
+    i: 2,
     name: 'Бен Биггер',
     rank: 'A-ранг',
     limited: false,
@@ -15,7 +15,7 @@ const characters = [{
     specialty: 'Оборона',
     faction: 'Комбинат Белобог'
 }, {
-    i: 2,
+    i: 3,
     name: 'Билли Кид',
     rank: 'A-ранг',
     limited: false,
@@ -23,7 +23,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Хитрые зайцы'
 }, {
-    i: 3,
+    i: 4,
     name: 'Бёрнис Уайт',
     rank: 'S-ранг',
     limited: true,
@@ -31,7 +31,7 @@ const characters = [{
     specialty: 'Аномалия',
     faction: 'Сыны Калидона'
 }, {
-    i: 4,
+    i: 5,
     name: 'Грейс Ховард',
     rank: 'S-ранг',
     limited: false,
@@ -39,7 +39,7 @@ const characters = [{
     specialty: 'Аномалия',
     faction: 'Комбинат Белобог'
 }, {
-    i: 5,
+    i: 6,
     name: 'Джейн Доу',
     rank: 'S-ранг',
     limited: true,
@@ -47,7 +47,7 @@ const characters = [{
     specialty: 'Аномалия',
     faction: 'Группа особого реагирования угрозыска'
 }, {
-    i: 6,
+    i: 7,
     name: 'Коляда Белобог',
     rank: 'S-ранг',
     limited: false,
@@ -55,7 +55,7 @@ const characters = [{
     specialty: 'Устрашение',
     faction: 'Комбинат Белобог'
 }, {
-    i: 7,
+    i: 8,
     name: 'Корин Уинкс',
     rank: 'A-ранг',
     limited: false,
@@ -63,7 +63,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Агентство домашнего персонала Виктория'
 }, {
-    i: 8,
+    i: 9,
     name: 'Фон Ликаон',
     rank: 'S-ранг',
     limited: false,
@@ -71,7 +71,7 @@ const characters = [{
     specialty: 'Оборона',
     faction: 'Агентство домашнего персонала Виктория'
 }, {
-    i: 9,
+    i: 10,
     name: 'Люсиана де Монтефио',
     rank: 'A-ранг',
     limited: false,
@@ -79,7 +79,7 @@ const characters = [{
     specialty: 'Поддержка',
     faction: 'Сыны Калидона'
 }, {
-    i: 10,
+    i: 11,
     name: 'Николь Демара',
     rank: 'A-ранг',
     limited: false,
@@ -87,7 +87,7 @@ const characters = [{
     specialty: 'Поддержка',
     faction: 'Хитрые зайцы'
 }, {
-    i: 11,
+    i: 12,
     name: 'Нэкомия Мана',
     rank: 'S-ранг',
     limited: false,
@@ -95,7 +95,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Хитрые зайцы'
 }, {
-    i: 12,
+    i: 13,
     name: 'Пайпер Уил',
     rank: 'A-ранг',
     limited: false,
@@ -103,7 +103,7 @@ const characters = [{
     specialty: 'Аномалия',
     faction: 'Сыны Калидона'
 }, {
-    i: 13,
+    i: 14,
     name: 'Александрина Себастиан',
     rank: 'S-ранг',
     limited: false,
@@ -111,7 +111,7 @@ const characters = [{
     specialty: 'Поддержка',
     faction: 'Агентство домашнего персонала Виктория'
 }, {
-    i: 14,
+    i: 15,
     name: 'Сет Лоуэлл',
     rank: 'A-ранг',
     limited: false,
@@ -119,7 +119,7 @@ const characters = [{
     specialty: 'Оборона',
     faction: 'Группа особого реагирования угрозыска'
 }, {
-    i: 15,
+    i: 16,
     name: 'Сокаку',
     rank: 'A-ранг',
     limited: false,
@@ -127,7 +127,7 @@ const characters = [{
     specialty: 'Поддержка',
     faction: 'Секция 6'
 }, {
-    i: 16,
+    i: 17,
     name: 'Солдат 11',
     rank: 'S-ранг',
     limited: false,
@@ -135,7 +135,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Отряд Обол'
 }, {
-    i: 17,
+    i: 18,
     name: 'Цезарь Кинг',
     rank: 'S-ранг',
     limited: true,
@@ -143,7 +143,7 @@ const characters = [{
     specialty: 'Оборона',
     faction: 'Сыны Калидона'
 }, {
-    i: 18,
+    i: 19,
     name: 'Цинъи',
     rank: 'S-ранг',
     limited: true,
@@ -151,7 +151,7 @@ const characters = [{
     specialty: 'Устрашение',
     faction: 'Группа особого реагирования угрозыска'
 }, {
-    i: 19,
+    i: 20,
     name: 'Чжу Юань',
     rank: 'S-ранг',
     limited: true,
@@ -159,7 +159,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Группа особого реагирования угрозыска'
 }, {
-    i: 20,
+    i: 21,
     name: 'Эллен Джо',
     rank: 'S-ранг',
     limited: true,
@@ -167,7 +167,7 @@ const characters = [{
     specialty: 'Нападение',
     faction: 'Агентство домашнего персонала Виктория'
 }, {
-    i: 21,
+    i: 22,
     name: 'Энби Демара',
     rank: 'A-ранг',
     limited: false,
@@ -175,7 +175,7 @@ const characters = [{
     specialty: 'Устрашение',
     faction: 'Хитрые зайцы'
 }, {
-    i: 22,
+    i: 23,
     name: 'Цукисиро Янаги',
     rank: 'S-ранг',
     limited: true,
@@ -186,357 +186,364 @@ const characters = [{
 ];
 
 const wEngines = [{
-    i: 0,
+    i: 1,
     name: 'Встроенный компилятор',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: true
 }, {
-    i: 1,
+    i: 2,
     name: 'Заострённые шипы',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Аномалия',
     isSignA: true
 }, {
-    i: 2,
+    i: 3,
+    name: 'Ткач времени',
+    rank: 'S-ранг',
+    limited: true,
+    specialty: 'Аномалия',
+    isSignA: true
+}, {
+    i: 4,
     name: 'Шейкер-огнемейкер',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Аномалия',
     isSignA: true
 }, {
-    i: 3,
+    i: 5,
     name: 'Плачущие близнецы',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 4,
+    i: 6,
     name: 'Ревущая тачка',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: true
 }, {
-    i: 5,
+    i: 7,
     name: 'Тропический гурман',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 6,
+    i: 8,
     name: 'Электроблеск для губ',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 7,
+    i: 9,
     name: 'Магнитная буря Альфа',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 8,
+    i: 10,
     name: 'Магнитная буря Браво',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 9,
+    i: 11,
     name: 'Магнитная буря Чарли',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
-    i: 10,
+    i: 12,
     name: 'Гость из глубин',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 11,
+    i: 13,
     name: 'Сера',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 12,
+    i: 14,
     name: 'Стальная лапа',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 13,
+    i: 15,
     name: 'Усмиритель беспорядков VI',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 14,
+    i: 16,
     name: 'Артиллерийский ротор',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 15,
+    i: 17,
     name: 'Бур - красная ось',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 16,
+    i: 18,
     name: 'Домработница',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 17,
+    i: 19,
     name: 'Звёздный двигатель',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 18,
+    i: 20,
     name: 'Звезда улиц',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 19,
+    i: 21,
     name: 'Златоцвет',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 20,
+    i: 22,
     name: 'Реплика Звёздного двигателя',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: true
 }, {
-    i: 21,
+    i: 23,
     name: 'Фаза луны Новолуние',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 22,
+    i: 24,
     name: 'Фаза луны Полнолуние',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 23,
+    i: 25,
     name: 'Фаза луны Убывающая луна',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
-    i: 24,
+    i: 26,
     name: 'Клыки ярости',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Оборона',
     isSignA: true
 }, {
-    i: 25,
+    i: 27,
     name: 'Большой цилиндр',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: true
 }, {
-    i: 26,
+    i: 28,
     name: 'Весеннее тепло',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
-    i: 27,
+    i: 29,
     name: 'Заячья корзинка',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
-    i: 28,
+    i: 30,
     name: 'Миротворец - специализированный',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: true
 }, {
-    i: 29,
+    i: 31,
     name: 'Оригинальный трансформатор',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
-    i: 30,
+    i: 32,
     name: 'Идентичность Изменчивость',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
-    i: 31,
+    i: 33,
     name: 'Идентичность Постоянство',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
-    i: 32,
+    i: 34,
     name: 'Колыбель плача',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: true
 }, {
-    i: 33,
+    i: 35,
     name: 'Бум-пушка',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: true
 }, {
-    i: 34,
+    i: 36,
     name: 'Застенчивый монстр',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: true
 }, {
-    i: 35,
+    i: 37,
     name: 'Кадр на память',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: false
 }, {
-    i: 36,
+    i: 38,
     name: 'Мяч для игры без правил',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: false
 }, {
-    i: 37,
+    i: 39,
     name: 'Сундук сокровищ',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: true
 }, {
-    i: 38,
+    i: 40,
     name: 'Ревербератор I',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: false
 }, {
-    i: 39,
+    i: 41,
     name: 'Ревербератор II',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: false
 }, {
-    i: 40,
+    i: 42,
     name: 'Ревербератор III',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Поддержка',
     isSignA: false
 }, {
-    i: 41,
+    i: 43,
     name: 'Сдержанность',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: true
 }, {
-    i: 42,
+    i: 44,
     name: 'Чайник нефритовой чистоты',
     rank: 'S-ранг',
     limited: true,
     specialty: 'Устрашение',
     isSignA: true
 }, {
-    i: 43,
+    i: 45,
     name: 'Шестерни адского пламени',
     rank: 'S-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: true
 }, {
-    i: 44,
+    i: 46,
     name: 'Аккумулятор Демары II',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: true
 }, {
-    i: 45,
+    i: 47,
     name: 'Драгоценная окаменелость',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
-    i: 46,
+    i: 48,
     name: 'Пароварка',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
-    i: 47,
+    i: 49,
     name: 'Шестизарядник',
     rank: 'A-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
-    i: 48,
+    i: 50,
     name: 'Турбулентность Револьвер',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
-    i: 49,
+    i: 51,
     name: 'Турбулентность Стрела',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
-    i: 50,
+    i: 52,
     name: 'Турбулентность Топор',
     rank: 'B-ранг',
     limited: false,
