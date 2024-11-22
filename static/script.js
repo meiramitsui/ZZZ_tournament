@@ -1,23 +1,23 @@
 const characters = [{
     i: 0,
     name: 'Антон Иванов',
-    rank: 'А-ранг',
+    rank: 'A-ранг',
     limited: false,
     atribute: 'Электро',
     specialty: 'Нападение',
-    faction: 'Комбинат "Белобог"'
+    faction: 'Комбинат Белобог'
 }, {
     i: 1,
     name: 'Бен Биггер',
-    rank: 'А-ранг',
+    rank: 'A-ранг',
     limited: false,
     atribute: 'Огонь',
     specialty: 'Оборона',
-    faction: 'Комбинат "Белобог"'
+    faction: 'Комбинат Белобог'
 }, {
     i: 2,
     name: 'Билли Кид',
-    rank: 'А-ранг',
+    rank: 'A-ранг',
     limited: false,
     atribute: 'Физический',
     specialty: 'Нападение',
@@ -29,7 +29,7 @@ const characters = [{
     limited: true,
     atribute: 'Огонь',
     specialty: 'Аномалия',
-    faction: 'Сыны "Калидона"'
+    faction: 'Сыны Калидона'
 }, {
     i: 4,
     name: 'Грейс Ховард',
@@ -37,7 +37,7 @@ const characters = [{
     limited: false,
     atribute: 'Электро',
     specialty: 'Аномалия',
-    faction: 'Комбинат "Белобог"'
+    faction: 'Комбинат Белобог'
 }, {
     i: 5,
     name: 'Джейн Доу',
@@ -53,15 +53,15 @@ const characters = [{
     limited: false,
     atribute: 'Огонь',
     specialty: 'Устрашение',
-    faction: 'Комбинат "Белобог"'
+    faction: 'Комбинат Белобог'
 }, {
     i: 7,
     name: 'Корин Уинкс',
-    rank: 'А-ранг',
+    rank: 'A-ранг',
     limited: false,
     atribute: 'Физический',
     specialty: 'Нападение',
-    faction: 'Агенство домашнего персонала "Виктория"'
+    faction: 'Агентство домашнего персонала Виктория'
 }, {
     i: 8,
     name: 'Фон Ликаон',
@@ -69,7 +69,7 @@ const characters = [{
     limited: false,
     atribute: 'Лёд',
     specialty: 'Оборона',
-    faction: 'Агентство домашнего персонала "Виктория"'
+    faction: 'Агентство домашнего персонала Виктория'
 }, {
     i: 9,
     name: 'Люсиана де Монтефио',
@@ -77,7 +77,7 @@ const characters = [{
     limited: false,
     atribute: 'Огонь',
     specialty: 'Поддержка',
-    faction: 'Сыны "Калидона"'
+    faction: 'Сыны Калидона'
 }, {
     i: 10,
     name: 'Николь Демара',
@@ -101,7 +101,7 @@ const characters = [{
     limited: false,
     atribute: 'Физический',
     specialty: 'Аномалия',
-    faction: 'Сыны "Калидона"'
+    faction: 'Сыны Калидона'
 }, {
     i: 13,
     name: 'Александрина Себастиан',
@@ -109,7 +109,7 @@ const characters = [{
     limited: false,
     atribute: 'Электро',
     specialty: 'Поддержка',
-    faction: 'Агентство домашнего персонала "Виктория"'
+    faction: 'Агентство домашнего персонала Виктория'
 }, {
     i: 14,
     name: 'Сет Лоуэлл',
@@ -141,10 +141,10 @@ const characters = [{
     limited: true,
     atribute: 'Физический',
     specialty: 'Оборона',
-    faction: 'Сыны "Калидона"'
+    faction: 'Сыны Калидона'
 }, {
     i: 18,
-    name: 'Циньи',
+    name: 'Цинъи',
     rank: 'S-ранг',
     limited: true,
     atribute: 'Электро',
@@ -165,7 +165,7 @@ const characters = [{
     limited: true,
     atribute: 'Лёд',
     specialty: 'Нападение',
-    faction: 'Агентство домашнего персонала "Виктория"'
+    faction: 'Агентство домашнего персонала Виктория'
 }, {
     i: 21,
     name: 'Энби Демара',
@@ -236,21 +236,21 @@ const wEngines = [{
     isSignA: false
 }, {
     i: 7,
-    name: 'Магнитная буря: Альфа',
+    name: 'Магнитная буря Альфа',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
     i: 8,
-    name: 'Магнитная буря: Браво',
+    name: 'Магнитная буря Браво',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
     isSignA: false
 }, {
     i: 9,
-    name: 'Магнитная буря: Чарли',
+    name: 'Магнитная буря Чарли',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Аномалия',
@@ -334,21 +334,21 @@ const wEngines = [{
     isSignA: true
 }, {
     i: 21,
-    name: 'Фаза луны: Новолуние',
+    name: 'Фаза луны Новолуние',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
     i: 22,
-    name: 'Фаза луны: Полнолуние',
+    name: 'Фаза луны Полнолуние',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
     isSignA: false
 }, {
     i: 23,
-    name: 'Фаза луны: Убывающая',
+    name: 'Фаза луны Убывающая луна',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Нападение',
@@ -397,14 +397,14 @@ const wEngines = [{
     isSignA: false
 }, {
     i: 30,
-    name: 'Идентичность: Изменчивость',
+    name: 'Идентичность Изменчивость',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Оборона',
     isSignA: false
 }, {
     i: 31,
-    name: 'Идентичность: Постоянство',
+    name: 'Идентичность Постоянство',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Оборона',
@@ -523,21 +523,21 @@ const wEngines = [{
     isSignA: false
 }, {
     i: 48,
-    name: 'Турбулентность: Револьвер',
+    name: 'Турбулентность Револьвер',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
     i: 49,
-    name: 'Турбулентность: Стрела',
+    name: 'Турбулентность Стрела',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Устрашение',
     isSignA: false
 }, {
     i: 50,
-    name: 'Турбулентность: Топор',
+    name: 'Турбулентность Топор',
     rank: 'B-ранг',
     limited: false,
     specialty: 'Устрашение',
@@ -545,12 +545,90 @@ const wEngines = [{
 }
 ];
 
+const characterModal = document.getElementById('characterModal');
+const closeCharacterModal = document.querySelector('.characterClose');
+const characterTableBody = document.querySelector('#characterTable tbody');
+let characterTargetInput, characterTargetButton;
+
+document.querySelectorAll('.character-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        characterTargetInput = document.getElementById(button.dataset.target);
+        characterTargetButton = button;
+        characterModal.style.display = 'block';
+        loadCharacters();
+    });
+});
+
+closeCharacterModal.addEventListener('click', () => {
+    characterModal.style.display = 'none';
+});
+
+function loadCharacters() {
+    characterTableBody.innerHTML = '';
+    characters.forEach(character => {
+        const characterRow = document.createElement('tr');
+        characterRow.innerHTML = `
+            <td>${character.i}</td>
+            <td><img src="static/icons/characters/${character.name}.webp" alt="${character.name}" width="120"></td>
+            <td>${character.name}</td>
+            <td><img src="static/icons/ranks/${character.rank}.webp" alt="${character.rank}" width="32"></td>
+            <td><img src="static/icons/atributes/${character.atribute}.webp" alt="${character.atribute}" width="64">${character.atribute}</td>
+            <td><img src="static/icons/specialties/${character.specialty}.webp" alt="${character.specialty}" width="64">${character.specialty}</td>
+            <td><img src="static/icons/factions/${character.faction}.webp" alt="${character.faction}" width="120"></td>
+        `;
+        characterRow.addEventListener('click', () => {
+            characterTargetInput.value = character.name;
+            characterTargetButton.textContent = `${character.name}`;
+            characterModal.style.display = 'none';
+        });
+        characterTableBody.appendChild(characterRow);
+    });
+}
+
+const wEngineModal = document.getElementById('wEngineModal');
+const closeWEngineModal = document.querySelector('.wEngineClose');
+const wEngineTableBody = document.querySelector('#wEngineTable tbody');
+let wEngineTargetInput, wEngineTargetButton;
+
+document.querySelectorAll('.wengine-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        wEngineTargetInput = document.getElementById(button.dataset.target);
+        wEngineTargetButton = button;
+        wEngineModal.style.display = 'block';
+        loadWEngines();
+    });
+});
+
+closeWEngineModal.addEventListener('click', () => {
+    wEngineModal.style.display = 'none';
+});
+
+function loadWEngines() {
+    wEngineTableBody.innerHTML = '';
+    wEngines.forEach(wEngine => {
+        const wEngineRow = document.createElement('tr');
+        wEngineRow.innerHTML = `
+            <td>${wEngine.i}</td>
+            <td><img src="static/icons/wEngines/${wEngine.name}.webp" alt="${wEngine.name}" width="120"></td>
+            <td>${wEngine.name}</td>
+            <td><img src="static/icons/ranks/${wEngine.rank}.webp" alt="${wEngine.rank}" width="32"></td>
+            <td><img src="static/icons/specialties/${wEngine.specialty}.webp" alt="${wEngine.specialty}" width="64">${wEngine.specialty}</td>
+        `;
+        wEngineRow.addEventListener('click', () => {
+            wEngineTargetInput.value = wEngine.name;
+            wEngineTargetButton.textContent = `Выбрано: ${wEngine.name}`;
+            wEngineModal.style.display = 'none';
+        });
+        wEngineTableBody.appendChild(wEngineRow);
+    });
+}
+
 function createCharacterOption(character) {
     const option = document.createElement('option');
     option.value = character.name;
     option.innerHTML = `
     <div style="display: flex; align-items: center;">
-            <img src="/static/icons/characters/${character.name}.webp" alt="${character.name}" width="50" height="50" style="margin-right: 10px;">
+            <img src="static/icons/characters/${character.name}.webp" alt="${character.name}" width="50" height="50" style="margin-right: 10px;">
             <span>${character.name} — ${character.rank}, ${character.atribute}, ${character.specialty}, ${character.faction}</span>
         </div>
     `;
@@ -562,25 +640,22 @@ function createwEngineOption(wEngine) {
     option.value = wEngine.name;
     option.innerHTML = `
         <div style="display: flex; align-items: center;">
-            <img src="/static/icons/wEngines/${wEngine.name}.webp" alt="${wEngine.name}" width="50" height="50" style="margin-right: 10px;">
+            <img src="static/icons/wEngines/${wEngine.name}.webp" alt="${wEngine.name}" width="50" height="50" style="margin-right: 10px;">
             <span>${wEngine.name} — ${wEngine.rank}, ${wEngine.specialty}</span>
         </div>
     `;
     return option;
 }
 
-const sortedCharacters = characters.sort((a, b) => a.name.localeCompare(b.name));
-const sortedWEngines = wEngines.sort((a, b) => a.name.localeCompare(b.name));
-
 document.querySelectorAll('select[name^="c"]').forEach(select => {
-    sortedCharacters.forEach(character => {
+    characters.forEach(character => {
         const option = createCharacterOption(character);
         select.appendChild(option);
     });
 });
 
 document.querySelectorAll('select[name^="a"]').forEach(select => {
-    sortedWEngines.forEach(wEngine => {
+    wEngines.forEach(wEngine => {
         const option = createwEngineOption(wEngine);
         select.appendChild(option);
     });
