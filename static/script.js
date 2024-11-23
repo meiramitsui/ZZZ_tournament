@@ -725,18 +725,33 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const data = {};
+    const data = {
+        nickname: formData.get('nickname'),
+        group1: [],
+        group2: []
+    };
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 3; i++) {
         const character = formData.get(`c${i}`);
         const mental = formData.get(`m${i}`);
-        const amplifier = formData.get(`a${i}`);
+        const wEngine = formData.get(`a${i}`);
         const upgrade = formData.get(`u${i}`);
-
-        if (character && amplifier) {
-            data[`group${i}`] = `${character} [${mental}] (${amplifier} [${upgrade}])`;
+        if (character && wEngine) {
+            data.group1.push(`${character} [${mental}] (${wEngine} [${upgrade}])`);
         }
     }
+
+    for (let i = 4; i <= 6; i++) {
+        const character = formData.get(`c${i}`);
+        const mental = formData.get(`m${i}`);
+        const wEngine = formData.get(`a${i}`);
+        const upgrade = formData.get(`u${i}`);
+        if (character && wEngine) {
+            data.group2.push(`${character} [${mental}] (${wEngine} [${upgrade}])`);
+        }
+    }
+
+    console.log(data);
 
     fetch('https://zzz-tournament.onrender.com/save', {
         method: 'POST',
