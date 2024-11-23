@@ -32,7 +32,7 @@ def save_to_google_sheets():
 
     sheet.append_row(row)
 
-    return jsonify({'message': 'Данные успешно сохранены в Google Sheets'})
+    return jsonify({'message': 'Ваши данные сохранены, регистрация прошла успешно.'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

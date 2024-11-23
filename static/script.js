@@ -552,6 +552,9 @@ const wEngines = [{
 }
 ];
 
+const mentalOptions = ["M0", "M1", "M2", "M3", "M4", "M5", "M6"];
+const upgradeOptions = ["U1", "U2", "U3", "U4", "U5"];
+
 const characterModal = document.getElementById('characterModal');
 const closeCharacterModal = document.querySelector('.characterClose');
 const characterTableBody = document.querySelector('#characterTable tbody');
@@ -585,7 +588,10 @@ function loadCharacters() {
         `;
         characterRow.addEventListener('click', () => {
             characterTargetInput.value = character.name;
-            characterTargetButton.textContent = `${character.name}`;
+            characterTargetButton.innerHTML = `
+            <img src="static/icons/characters/${character.name}.webp" alt="${character.name}" width="40" style="margin-right: 5px;">
+            ${character.name}
+        `;
             characterModal.style.display = 'none';
         });
         characterTableBody.appendChild(characterRow);
@@ -623,7 +629,10 @@ function loadWEngines() {
         `;
         wEngineRow.addEventListener('click', () => {
             wEngineTargetInput.value = wEngine.name;
-            wEngineTargetButton.textContent = `Выбрано: ${wEngine.name}`;
+            wEngineTargetButton.innerHTML = `
+        <img src="static/icons/wEngines/${wEngine.name}.webp" alt="${wEngine.name}" width="40" style="margin-right: 5px;">
+        ${wEngine.name}
+    `;
             wEngineModal.style.display = 'none';
         });
         wEngineTableBody.appendChild(wEngineRow);
@@ -641,6 +650,50 @@ function createCharacterOption(character) {
     `;
     return option;
 }
+
+function createOptionList(options, callback) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.style.display = 'block';
+
+    const content = document.createElement('div');
+    content.className = 'modal-content';
+    modal.appendChild(content);
+
+    options.forEach(option => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = option;
+        button.addEventListener('click', () => {
+            callback(option);
+            modal.style.display = 'none';
+            document.body.removeChild(modal);
+        });
+        content.appendChild(button);
+    });
+
+    document.body.appendChild(modal);
+}
+
+document.querySelectorAll('.mental-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetInput = document.getElementById(button.dataset.target);
+        createOptionList(mentalOptions, selectedOption => {
+            targetInput.value = selectedOption;
+            button.textContent = `${selectedOption}`;
+        });
+    });
+});
+
+document.querySelectorAll('.upgrade-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetInput = document.getElementById(button.dataset.target);
+        createOptionList(upgradeOptions, selectedOption => {
+            targetInput.value = selectedOption;
+            button.textContent = `${selectedOption}`;
+        });
+    });
+});
 
 function createwEngineOption(wEngine) {
     const option = document.createElement('option');
@@ -674,9 +727,16 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     const formData = new FormData(e.target);
     const data = {};
 
-    formData.forEach((value, key) => {
-        data[key] = value;
-    });
+    for (let i = 1; i <= 6; i++) {
+        const character = formData.get(`c${i}`);
+        const mental = formData.get(`m${i}`);
+        const amplifier = formData.get(`a${i}`);
+        const upgrade = formData.get(`u${i}`);
+
+        if (character && amplifier) {
+            data[`group${i}`] = `${character} [${mental}] (${amplifier} [${upgrade}])`;
+        }
+    }
 
     fetch('https://zzz-tournament.onrender.com/save', {
         method: 'POST',

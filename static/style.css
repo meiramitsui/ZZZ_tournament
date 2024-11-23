@@ -15,12 +15,20 @@ p {
 }
 
 form {
-    max-width: 800px;
-    margin: 0 auto;
+    width: 90%;
+    margin: 20 auto;
     padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 100%;
+        margin: 10px;
+        padding: 15px;
+    }
 }
 
 .row {
@@ -44,13 +52,41 @@ button {
 }
 
 button.character-btn {
-    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: crimson;
     color: white;
 }
 
+button.character-btn img {
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
 button.wengine-btn {
-    background-color: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: green;
     color: white;
+}
+
+button.wEngine-btn img {
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 button:hover {
@@ -98,6 +134,39 @@ button:hover {
     width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-content button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 table {
     width: 100%;
