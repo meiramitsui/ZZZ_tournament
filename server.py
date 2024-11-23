@@ -24,10 +24,20 @@ def serve_html():
 def save_to_google_sheets():
     data = request.json
 
+    group1 = [
+        f"{data.get(f'c{i}', '')} [{data.get(f'm{i}', '')}] ({data.get(f'a{i}', '')} [{data.get(f'u{i}', '')}])"
+        for i in range(1, 4)
+    ]
+    
+    group2 = [
+        f"{data.get(f'c{i}', '')} [{data.get(f'm{i}', '')}] ({data.get(f'a{i}', '')} [{data.get(f'u{i}', '')}])"
+        for i in range(4, 7)
+    ]
+    
     row = [
         data.get('nickname', ''),
-        ', '.join([f"{data.get(f'c{i}', '')} ({data.get(f'a{i}', '')})" for i in range(1, 4)]),
-        ', '.join([f"{data.get(f'c{i}', '')} ({data.get(f'a{i}', '')})" for i in range(4, 7)])
+        ', '.join(group1),
+        ', '.join(group2)
     ]
 
     sheet.append_row(row)
