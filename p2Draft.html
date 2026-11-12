@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DraftZZZ</title>
+<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+<link rel="stylesheet" href="static/draftStyle.css">
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="header">
+                <div class="roomPlayer player1">
+                    <p class="nickname player1"></p>
+                    <div class="roomBackground player1"></div>
+                </div>
+
+                <div class="notification">
+                    <h1 class="text-center"></h1>
+                    <div class="roomBackgroundNotification"></div>
+                </div>
+
+                <div class="roomPlayer player2">
+                    <p class="nickname player2"></p>
+                    <div class="roomBackground player2"></div>
+                </div>
+            </div>
+
+            <div class="pickColumn player1 characters">
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+            
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="characterWithMind player1">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+            </div>
+
+            <div class="pickColumn player1 wEngines">
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player1">
+                    <div class="wEngineWithUpgrade player1">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+            </div>
+
+            <div class="pickColumn player2 wEngines">
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="wEngineWithUpgrade player2">
+                        <div class="wEngineImage pick-image" style="background-image: url('static/icons/misc/Icon_Storage_W-Engine.webp');"></div>
+
+                        <p class="upgrade"></p>
+                    </div>
+
+                    <p class="wEngineName"></p>
+                </div>
+            </div>
+
+            <div class="pickColumn player2 characters">
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+            
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+
+                <div class="pickRow player2">
+                    <div class="characterWithMind player2">
+                        <div class="characterImage pick-image" style="background-image: url('static/icons/misc/Agent_Icon.webp');"></div>
+                    
+                        <p class="mind"></p>
+                    </div>
+
+                    <p class="characterName"></p>
+                </div>
+            </div>
+
+            <div class="charactersWithFilters">
+                <div class="character-filters">
+                    <div class="filters">
+                        <div class="charactersFiltersSpecialties">
+                            <img alt="Нападение" class="specialtiesIcon character attack" src="static/icons/specialties/Нападение.webp" data-specialty="attack">
+                            <img alt="Устрашение" class="specialtiesIcon character stun" src="static/icons/specialties/Устрашение.webp" data-specialty="stun">
+                            <img alt="Аномалия" class="specialtiesIcon character anomaly" src="static/icons/specialties/Аномалия.webp" data-specialty="anomaly">
+                            <img alt="Поддержка" class="specialtiesIcon character support" src="static/icons/specialties/Поддержка.webp" data-specialty="support">
+                            <img alt="Оборона" class="specialtiesIcon character defense" src="static/icons/specialties/Оборона.webp" data-specialty="defense">
+                        </div>
+
+                        <div class="charactersFiltersAtributes">
+                            <img alt="Физический" class="atributesIcon physical" src="static/icons/atributes/Физический.webp" data-atribute="physical">
+                            <img alt="Лёд" class="atributesIcon ice" src="static/icons/atributes/Лёд.webp" data-atribute="ice">
+                            <img alt="Огонь" class="atributesIcon fire" src="static/icons/atributes/Огонь.webp" data-atribute="fire">
+                            <img alt="Электро" class="atributesIcon electric" src="static/icons/atributes/Электро.webp" data-atribute="electric">
+                            <img alt="Эфир" class="atributesIcon ether" src="static/icons/atributes/Эфир.webp" data-atribute="ether">
+                        </div>
+                    </div>
+
+                    <div class="charactersSearch">
+                        <div class="input">
+                            <img alt="поиск" class="search" src="static/icons/misc/Icon_Signal_Search.webp">
+                            <input name="searchInput" placeholder="Поиск...">
+                        </div>
+
+                        <img alt="очистить" class="cross character" src="static/icons/misc/cross_icon.svg">
+                    </div>
+                </div>
+
+                <div class="grid-section character-grid">
+                    <div class="characterImage grid-image active" data-name="Александрина Себастиан" data-specialty="support" data-atribute="electric" style="background-image: url('static/icons/characters/Александрина\ Себастиан.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Антон Иванов" data-specialty="attack" data-atribute="electric" style="background-image: url('static/icons/characters/Антон\ Иванов.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Бен Биггер" data-specialty="defense" data-atribute="fire" style="background-image: url('static/icons/characters/Бен\ Биггер.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Бёрнис Уайт" data-specialty="anomaly" data-atribute="fire" style="background-image: url('static/icons/characters/Бёрнис\ Уайт.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Билли Кид" data-specialty="attack" data-atribute="physical" style="background-image: url('static/icons/characters/Билли\ Кид.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Грейс Ховард" data-specialty="anomaly" data-atribute="electric" style="background-image: url('static/icons/characters/Грейс\ Ховард.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Джейн Доу" data-specialty="anomaly" data-atribute="physical" style="background-image: url('static/icons/characters/Джейн\ Доу.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Коляда Белобог" data-specialty="stun" data-atribute="fire" style="background-image: url('static/icons/characters/Коляда\ Белобог.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Корин Уинкс" data-specialty="attack" data-atribute="physical" style="background-image: url('static/icons/characters/Корин\ Уинкс.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Лайтер" data-specialty="stun" data-atribute="fire" style="background-image: url('static/icons/characters/Лайтер.png');"></div>
+                    <div class="characterImage grid-image active" data-name="Люсиана де Монтефио" data-specialty="support" data-atribute="fire" style="background-image: url('static/icons/characters/Люсиана\ де\ Монтефио.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Николь Демара" data-specialty="support" data-atribute="ether" style="background-image: url('static/icons/characters/Николь\ Демара.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Нэкомия Мана" data-specialty="attack" data-atribute="physical" style="background-image: url('static/icons/characters/Нэкомия\ Мана.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Пайпер Уил" data-specialty="anomaly" data-atribute="physical" style="background-image: url('static/icons/characters/Пайпер\ Уил.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Сет Лоуэлл" data-specialty="defense" data-atribute="electric" style="background-image: url('static/icons/characters/Сет\ Лоуэлл.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Сокаку" data-specialty="support" data-atribute="ice" style="background-image: url('static/icons/characters/Сокаку.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Солдат 11" data-specialty="attack" data-atribute="fire" style="background-image: url('static/icons/characters/Солдат\ 11.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Фон Ликаон" data-specialty="stun" data-atribute="ice" style="background-image: url('static/icons/characters/Фон\ Ликаон.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Цезарь Кинг" data-specialty="defense" data-atribute="physical" style="background-image: url('static/icons/characters/Цезарь\ Кинг.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Цинъи" data-specialty="stun" data-atribute="electric" style="background-image: url('static/icons/characters/Цинъи.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Цукисиро Янаги" data-specialty="anomaly" data-atribute="electric" style="background-image: url('static/icons/characters/Цукисиро\ Янаги.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Чжу Юань" data-specialty="attack" data-atribute="ether" style="background-image: url('static/icons/characters/Чжу\ Юань.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Эллен Джо" data-specialty="attack" data-atribute="ice" style="background-image: url('static/icons/characters/Эллен\ Джо.webp');"></div>
+                    <div class="characterImage grid-image active" data-name="Энби Демара" data-specialty="stun" data-atribute="electric" style="background-image: url('static/icons/characters/Энби\ Демара.webp');"></div>
+                </div>
+
+                <div id="mindDropdown" class="dropdown hidden">
+                    <ul>
+                        <li data-mind="M0">[M0]</li>
+                        <li data-mind="M1">[M1]</li>
+                        <li data-mind="M2">[M2]</li>
+                        <li data-mind="M3">[M3]</li>
+                        <li data-mind="M4">[M4]</li>
+                        <li data-mind="M5">[M5]</li>
+                        <li data-mind="M6">[M6]</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="wEnginesWithFilters">
+                <div class="wengine-filters">
+                    <div class="filters">
+                        <div class="wEnginesFiltersSpecialties">
+                            <img alt="Нападение" class="specialtiesIcon wEngine attack" src="static/icons/specialties/Нападение.webp" data-specialty="attack">
+                            <img alt="Устрашение" class="specialtiesIcon wEngine stun" src="static/icons/specialties/Устрашение.webp" data-specialty="stun">
+                            <img alt="Аномалия" class="specialtiesIcon wEngine anomaly" src="static/icons/specialties/Аномалия.webp" data-specialty="anomaly">
+                            <img alt="Поддержка" class="specialtiesIcon wEngine support" src="static/icons/specialties/Поддержка.webp" data-specialty="support">
+                            <img alt="Оборона" class="specialtiesIcon wEngine defense" src="static/icons/specialties/Оборона.webp" data-specialty="defense">
+                        </div>
+
+                        <div class="wEnginesFiltersRanks">
+                            <img alt="S-ранг" class="ranksIcon s" src="static/icons/ranks/S-ранг.webp" data-rank="s">
+                            <img alt="A-ранг" class="ranksIcon a" src="static/icons/ranks/A-ранг.webp" data-rank="a">
+                            <img alt="B-ранг" class="ranksIcon b" src="static/icons/ranks/B-ранг.webp" data-rank="b">
+                        </div>
+
+                        <div class="wEnginesSearch">
+                            <div class="input">
+                                <img alt="поиск" class="search" src="static/icons/misc/Icon_Signal_Search.webp">
+                                <input name="searchInput" placeholder="Поиск...">
+                            </div>
+
+                            <img alt="очистить" class="cross wEngine" src="static/icons/misc/cross_icon.svg">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-section wengine-grid">
+                    <div class="wEngineImage grid-image active" data-name="Аккумулятор Демары II" data-specialty="stun" data-rank="a" style="background-image: url('static/icons/wEngines/Аккумулятор\ Демары\ II.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Артиллерийский ротор" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Артиллерийский\ ротор.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Большой цилиндр" data-specialty="defense" data-rank="a" style="background-image: url('static/icons/wEngines/Большой\ цилиндр.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Бум-пушка" data-specialty="support" data-rank="a" style="background-image: url('static/icons/wEngines/Бум-пушка.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Бур - красная ось" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Бур\ -\ красная\ ось.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Весеннее тепло" data-specialty="defense" data-rank="a" style="background-image: url('static/icons/wEngines/Весеннее\ тепло.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Встроенный компилятор" data-specialty="anomaly" data-rank="s" style="background-image: url('static/icons/wEngines/Встроенный\ компилятор.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Гость из глубин" data-specialty="attack" data-rank="s" style="background-image: url('static/icons/wEngines/Гость\ из\ глубин.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Домработница" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Домработница.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Драгоценная окаменелость" data-specialty="stun" data-rank="a" style="background-image: url('static/icons/wEngines/Драгоценная\ окаменелость.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Заострённые шипы" data-specialty="anomaly" data-rank="s" style="background-image: url('static/icons/wEngines/Заострённые\ шипы.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Застенчивый монстр" data-specialty="support" data-rank="a" style="background-image: url('static/icons/wEngines/Застенчивый\ монстр.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Заячья корзинка" data-specialty="defense" data-rank="a" style="background-image: url('static/icons/wEngines/Заячья\ корзинка.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Звезда улиц" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Звезда\ улиц.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Звёздный двигатель" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Звёздный\ двигатель.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Златоцвет" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Златоцвет.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Идентичность: Изменчивость" data-specialty="defense" data-rank="b" style="background-image: url('static/icons/wEngines/Идентичность\ Изменчивость.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Идентичность: Постоянство" data-specialty="defense" data-rank="b" style="background-image: url('static/icons/wEngines/Идентичность\ Постоянство.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Кадр на память" data-specialty="support" data-rank="a" style="background-image: url('static/icons/wEngines/Кадр\ на\ память.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Клыки ярости" data-specialty="defense" data-rank="s" style="background-image: url('static/icons/wEngines/Клыки\ ярости.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Колыбель плача" data-specialty="support" data-rank="s" style="background-image: url('static/icons/wEngines/Колыбель\ плача.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Магнитная буря: Альфа" data-specialty="anomaly" data-rank="b" style="background-image: url('static/icons/wEngines/Магнитная\ буря\ Альфа.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Магнитная буря: Браво" data-specialty="anomaly" data-rank="b" style="background-image: url('static/icons/wEngines/Магнитная\ буря\ Браво.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Магнитная буря: Чарли" data-specialty="anomaly" data-rank="b" style="background-image: url('static/icons/wEngines/Магнитная\ буря\ Чарли.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Миротворец - специализированный" data-specialty="defense" data-rank="a" style="background-image: url('static/icons/wEngines/Миротворец\ -\ специализированный.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Мяч для игры без правил" data-specialty="support" data-rank="a" style="background-image: url('static/icons/wEngines/Мяч\ для\ игры\ без\ правил.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Оригинальный трансформатор" data-specialty="defense" data-rank="a" style="background-image: url('static/icons/wEngines/Оригинальный\ трансформатор.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Пароварка" data-specialty="stun" data-rank="a" style="background-image: url('static/icons/wEngines/Пароварка.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Пламенный венец" data-specialty="stun" data-rank="s" style="background-image: url('static/icons/wEngines/Пламенный\ венец.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Плачущие близнецы" data-specialty="anomaly" data-rank="a" style="background-image: url('static/icons/wEngines/Плачущие\ близнецы.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Ревербератор I" data-specialty="support" data-rank="b" style="background-image: url('static/icons/wEngines/Ревербератор\ I.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Ревербератор II" data-specialty="support" data-rank="b" style="background-image: url('static/icons/wEngines/Ревербератор\ II.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Ревербератор III" data-specialty="support" data-rank="b" style="background-image: url('static/icons/wEngines/Ревербератор\ III.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Ревущая тачка" data-specialty="anomaly" data-rank="a" style="background-image: url('static/icons/wEngines/Ревущая\ тачка.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Реплика Звёздного двигателя" data-specialty="attack" data-rank="a" style="background-image: url('static/icons/wEngines/Реплика\ Звёздного\ двигателя.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Сдержанность" data-specialty="stun" data-rank="s" style="background-image: url('static/icons/wEngines/Сдержанность.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Сера" data-specialty="attack" data-rank="s" style="background-image: url('static/icons/wEngines/Сера.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Стальная лапа" data-specialty="attack" data-rank="s" style="background-image: url('static/icons/wEngines/Стальная\ лапа.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Сундук сокровищ" data-specialty="support" data-rank="a" style="background-image: url('static/icons/wEngines/Сундук\ сокровищ.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Ткач времени" data-specialty="anomaly" data-rank="s" style="background-image: url('static/icons/wEngines/Ткач\ времени.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Тропический гурман" data-specialty="anomaly" data-rank="a" style="background-image: url('static/icons/wEngines/Тропический\ гурман.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Турбулентность: Револьвер" data-specialty="stun" data-rank="b" style="background-image: url('static/icons/wEngines/Турбулентность\ Револьвер.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Турбулентность: Стрела" data-specialty="stun" data-rank="b" style="background-image: url('static/icons/wEngines/Турбулентность\ Стрела.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Турбулентность: Топор" data-specialty="stun" data-rank="b" style="background-image: url('static/icons/wEngines/Турбулентность\ Топор.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Усмиритель беспорядков VI" data-specialty="attack" data-rank="s" style="background-image: url('static/icons/wEngines/Усмиритель\ беспорядков\ VI.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Фаза луны: Новолуние" data-specialty="attack" data-rank="b" style="background-image: url('static/icons/wEngines/Фаза\ луны\ Новолуние.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Фаза луны: Полнолуние" data-specialty="attack" data-rank="b" style="background-image: url('static/icons/wEngines/Фаза\ луны\ Полнолуние.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Фаза луны: Убывающая луна" data-specialty="attack" data-rank="b" style="background-image: url('static/icons/wEngines/Фаза\ луны\ Убывающая\ луна.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Чайник нефритовой чистоты" data-specialty="stun" data-rank="s" style="background-image: url('static/icons/wEngines/Чайник\ нефритовой\ чистоты.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Шейкер-огнемейкер" data-specialty="anomaly" data-rank="s" style="background-image: url('static/icons/wEngines/Шейкер-огнемейкер.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Шестерни адского пламени" data-specialty="stun" data-rank="s" style="background-image: url('static/icons/wEngines/Шестерни\ адского\ пламени.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Шестизарядник" data-specialty="stun" data-rank="a" style="background-image: url('static/icons/wEngines/Шестизарядник.webp');"></div>
+                    <div class="wEngineImage grid-image active" data-name="Электроблеск для губ" data-specialty="anomaly" data-rank="a" style="background-image: url('static/icons/wEngines/Электроблеск\ для\ губ.webp');"></div>
+                </div>
+
+                <div id="upgradeDropdown" class="dropdown hidden">
+                    <ul>
+                        <li data-upgrade="U1">[U1]</li>
+                        <li data-upgrade="U2">[U2]</li>
+                        <li data-upgrade="U3">[U3]</li>
+                        <li data-upgrade="U4">[U4]</li>
+                        <li data-upgrade="U5">[U5]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button id="confirmSelection" class="confirm-section" disabled>
+            <span id="timer">(10)</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="static/p2Draft.js"></script>
+</body>
+</html>

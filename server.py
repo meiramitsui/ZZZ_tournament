@@ -1,38 +1,60 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, url_for, request
+import uuid
 from flask_cors import CORS
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import os
-import json
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__, static_folder='static')
 CORS(app)
-
-scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-creds = ServiceAccountCredentials.from_json_keyfile_dict(
-    json.loads(os.getenv('GOOGLE_CREDENTIALS')), scope
-)
-client = gspread.authorize(creds)
-
-sheet = client.open('ZZZ_CUP_Registration').sheet1
+socketio = SocketIO(app)
 
 @app.route('/')
-def serve_html():
-    return send_from_directory('.', 'index.html')
+def index():
+    return "Hello, WebSocket!"
 
-@app.route('/save', methods=['POST'])
-def save_to_google_sheets():
-    data = request.json
+@app.route('/create', methods=['GET'])
+def create_draft():
+    draft_id = str(uuid.uuid4())
+    player1 = request.args.get('player1', 'Игрок 1')
+    player2 = request.args.get('player2', 'Игрок 2')
+    player1_link = f"{url_for('draft_page', draft_id=draft_id, role='player1', _external=True)}?nickname={player1}"
+    player2_link = f"{url_for('draft_page', draft_id=draft_id, role='player2', _external=True)}?nickname={player2}"
+    spectator_link = url_for('draft_page', draft_id=draft_id, role='spectator', _external=True)
 
-    nickname = data.get('nickname', '')
-    group1 = ', '.join(data.get('group1', []))
-    group2 = ', '.join(data.get('group2', []))
+    return jsonify({
+        'player1_link': player1_link,
+        'player2_link': player2_link,
+        'spectator_link': spectator_link
+    })
 
-    row = [nickname, group1, group2]
+@app.route('/draft/<draft_id>/<role>', methods=['GET'])
+def draft_page(draft_id, role):
+    if role == 'player1':
+        return send_from_directory('.', 'p1Draft.html')
+    elif role == 'player2':
+        return send_from_directory('.', 'p2Draft.html')
+    elif role == 'spectator':
+        return send_from_directory('.', 'spectator.html')
+    else:
+        return "Role not recognized", 400
+    
+connected_users = {}
 
-    sheet.append_row(row)
+@socketio.on('connect')
+def handle_connect():
+    print("User connected")
 
-    return jsonify({'message': 'Ваши данные сохранены, регистрация прошла успешно.'})
+@socketio.on('player_ready')
+def handle_player_ready(data):
+    emit('player_ready', data, broadcast=True)
+
+
+@socketio.on('player_action')
+def handle_player_action(data):
+    print(f"Получено сообщение от игрока: {data}")
+    emit('update_action', data, broadcast=True)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
+
+if __name__ == '__main__':
+    socketio.run(app, debug=True)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DraftZZZ</title>
+    <link rel="stylesheet" href="static/draftStyle.css">
+</head>
+<body>
+    <div id="root">
+        <div class="sendLine">
+            <label>Игрок 1
+            <input class="inputLine inputP1" type="text" placeholder="Никнейм первого игрока"></label>
+            <label>Игрок 2
+            <input class="inputLine inputP2" type="text" placeholder="Никнейм второго игрока"></label>
+            <button id="createDraft">Создать драфт</button>
+        </div>
+    </div>
+    <div id="links" style="margin-top: 20px; display: none;">
+        <p>Ссылки:</p>
+        <p><a id="player1Link" href="#">Ссылка для первого игрока</a></p>
+        <p><a id="player2Link" href="#">Ссылка для второго игрока</a></p>
+        <p><a id="spectatorLink" href="#">Ссылка для наблюдателей</a></p>
+    </div>
+
+    <script>
+        document.getElementById('createDraft').addEventListener('click', () => {
+            const player1Nickname = document.querySelector('.inputP1').value || 'Игрок 1';
+            const player2Nickname = document.querySelector('.inputP2').value || 'Игрок 2';
+
+            fetch('http://127.0.0.1:5000/create?player1=${encodeURIComponent(player1Nickname)}&player2=${encodeURIComponent(player2Nickname)}')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('player1Link').href = data.player1_link;
+                    document.getElementById('player2Link').href = data.player2_link;
+                    document.getElementById('spectatorLink').href = data.spectator_link;
+                    document.getElementById('links').style.display = 'block';
+                })
+                .catch(error => console.error('Ошибка создания драфта:', error));
+        });
+    </script>
+</body>
+</html>
